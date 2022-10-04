@@ -17,11 +17,11 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// This is the root, where the server will initially connect . 
+// This is the root directory, where the server will initially connect . 
 // Most routes will be in a separate file
 // use the format "/api/v#/database_name"
 app.use("/api/v1/solardb", solardb)
 app.use("*", (req, res) => res.status(404).json({error: "database not found"}))
 
-// Eexport statements allow files to be imported by other files
+// Export statements allow files to be imported by other files
 export default app
