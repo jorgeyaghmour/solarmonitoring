@@ -1,6 +1,7 @@
 import app from "./server.js"   // imports root
 import mongodb from "mongodb"   // helps conect to mongodb
 import dotenv from "dotenv"     // helps configure environment variables automatically
+import SolardbDAO from "./dao/solardbDAO.js"    // DAO file contains CRUD material
 
 // configures dotenv
 dotenv.config()
@@ -22,7 +23,8 @@ MongoClient.connect(
     process.exit(1)
 })
 .then(async client => { // If the connection is successful, this is executed
-    
+    // Commented out while testing functionality
+    // await SolardbDAO.injectDB(client)
     app.listen(port, () => {
         console.log('listening on port: ' + port)
     })
