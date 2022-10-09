@@ -24,7 +24,7 @@ MongoClient.connect(
 })
 .then(async client => { // If the connection is successful, this is executed
     // Commented out while testing functionality
-    // await SolardbDAO.injectDB(client)
+    await DailyDAO.injectDB(client)
     app.listen(port, () => {
         console.log('listening on port: ' + port)
     })
