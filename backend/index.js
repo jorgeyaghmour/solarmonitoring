@@ -1,7 +1,7 @@
 import app from "./server.js"   // imports root
 import mongodb from "mongodb"   // helps conect to mongodb
 import dotenv from "dotenv"     // helps configure environment variables automatically
-import SolardbDAO from "./dao/solardbDAO.js"    // DAO file contains CRUD material
+import DailyDAO from "./dao/dailyDAO.js"    // DAO file contains CRUD material
 
 // configures dotenv
 dotenv.config()
