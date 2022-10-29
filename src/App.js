@@ -1,23 +1,21 @@
 import React from 'react';
-
-import { Footer, Blog, Possibility, Features, Wsolarmonitoring, Header} from './containers';
-import {CTA, Brand, Navbar} from './components';
-import './Apps.css';
+import './App.css';
+import Navbar from './components/Navbar';
+import HourlyChart from './components/HourlyCharts';
+import DailyChart from './components/DailyCharts';
 
 const App = () => {
   return (
-    <div className="App">
-      <div className="gradient__bg">
-        <Navbar />
-        <Header />
+    <div className='App'>
+      <Navbar />
+      <h1 id='hourly-chart-header'>Hourly Chart</h1>
+      <div id="hourly-chart">
+        <HourlyChart />
       </div>
-      <Brand />
-      <Wsolarmonitoring />
-      <Features />
-      <Possibility />
-      <CTA />
-      <Blog />
-      <Footer />
+      <h1 id='daily-chart-header'>Daily Chart</h1>
+      <div id="daily-chart">
+      <DailyChart />
+      </div>
     </div>
   )
 }
