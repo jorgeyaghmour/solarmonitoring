@@ -1,23 +1,35 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import './App.css';
+import { useState } from 'react';
 import Navbar from './components/Navbar';
-import HourlyChart from './components/HourlyCharts';
-import DailyChart from './components/DailyCharts';
+import { BrowserRouter, BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Charts from './pages/Charts';
+import LoginForm from './components/Login/loginform';
+import DailyCharts from './components/DailyCharts';
+import HourlyCharts from './components/HourlyCharts';
+import Loginform from './components/Login/loginform';
 
-const App = () => {
+export default function App(){
   return (
-    <div className='App'>
-      <Navbar />
-      <h1 id='hourly-chart-header'>Hourly Chart</h1>
-      <div id="hourly-chart">
-        <HourlyChart />
+    <>
+      <BrowserRouter>
+      <div className="page">
+      <LoginForm />
       </div>
-      <h1 id='daily-chart-header'>Daily Chart</h1>
-      <div id="daily-chart">
-      <DailyChart />
-      </div>
-    </div>
-  )
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Dashboard />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="charts" element={<Charts />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+
+//const root = ReactDOM.createRoot(document.getElementById('root'));
+//root.render(<App />);

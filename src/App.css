@@ -1,126 +1,49 @@
-html,
-body {
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    }
+
+.dashboard,
+.charts,
+.alerts,
+.weather,
+.account{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+body{
     background-color: #403f3f;
-    color: #FFFFFF;
-  margin: 0;
+    margin: 0;
 }
 
-#App {
-  font-family: Montserrat;
-  height: 100vh;
-}
+/* media queries */
 
-#hourly-chart {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 75rem;
-    height: 300px;
-    left: 275px;
-   top: 50px;
-
-    background: #1E1E1E;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-}
-
-#daily-chart {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 75rem;
-    height: 300px;
-    left: 275px;
-    top: 25rem;
-
-    background: #1E1E1E;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-  }
-
-.bm-item {
-  display: inline-block;
-  text-decoration: none;
-  margin-bottom: 10px;
-  color: #FFFFFF;
-  transition: color 0.2s;
-}
-
-.bm-item:hover {
-  color: white;
-}
-
-.bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
-}
-
-.bm-burger-bars {
-  background: #FFFFFF;
-}
-
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-.bm-cross {
-  background: #FFFFFF;
-}
-
-.bm-menu {
-    position: absolute;
-    width: 288px;
-    height: 1029px;
-    left: -30px;
-    top: -5px;
-    bottom: 5px;
+/* middle size devices, tablets or medium size phones*/
+@media screen and (max-width: 700px){
+    .section__padding{
+        padding: 4rem;
+    }
     
-    background: #BF2F1B;
-    border-radius: 50px;
+    .section__margin {
+        margin: 4rem;
+    }
 }
 
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-.bm-item-list {
-  color: #b8b7ad;
-}
-
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.menu-item {
-    text-align: center;
-    padding-top: 45px;
-}
-
-.logo {
-    padding-top: 20px;
-    text-align: center;
-}
-
-.heading {
-    font-size: large;
-    font-weight: 30px;
-    text-align: center;
-}
-
-#hourly-chart-header {
-    position: absolute;
-    top: -10px;
-    left: 50rem;
-}
-
-#daily-chart-header {
-    position: absolute;
-    top: 21rem;
-    left: 50rem;
+/* mobile devices */
+@media screen and (max-width: 550px){
+    .section__padding{
+        padding: 4rem 2rem;
+    }
+    
+    .section__margin {
+        margin: 4rem 2rem;
+    }
 }
