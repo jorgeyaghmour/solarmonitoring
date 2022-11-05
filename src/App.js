@@ -1,25 +1,35 @@
 import React from 'react';
+import { Redirect } from 'react-router';
+import './App.css';
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import { BrowserRouter, BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Charts from './pages/Charts';
+import LoginForm from './components/Login/loginform';
+import DailyCharts from './components/DailyCharts';
+import HourlyCharts from './components/HourlyCharts';
+import Loginform from './components/Login/loginform';
 
-import { Footer, Blog, Possibility, Features, Wsolarmonitoring, Header} from './containers';
-import {CTA, Brand, Navbar} from './components';
-import './Apps.css';
-
-const App = () => {
+export default function App(){
   return (
-    <div className="App">
-      <div className="gradient__bg">
-        <Navbar />
-        <Header />
+    <>
+      <BrowserRouter>
+      <div className="page">
+      <LoginForm />
       </div>
-      <Brand />
-      <Wsolarmonitoring />
-      <Features />
-      <Possibility />
-      <CTA />
-      <Blog />
-      <Footer />
-    </div>
-  )
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Dashboard />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="charts" element={<Charts />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+
+//const root = ReactDOM.createRoot(document.getElementById('root'));
+//root.render(<App />);

@@ -1,10 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
-    scroll-behavior: smooth;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    }
+
+.dashboard,
+.charts,
+.alerts,
+.weather,
+.account{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
 }
 
-body {
-    background: var(--color-bg);
+body{
+    background-color: #403f3f;
+    margin: 0;
+}
+
+/* media queries */
+
+/* middle size devices, tablets or medium size phones*/
+@media screen and (max-width: 700px){
+    .section__padding{
+        padding: 4rem;
+    }
+    
+    .section__margin {
+        margin: 4rem;
+    }
+}
+
+/* mobile devices */
+@media screen and (max-width: 550px){
+    .section__padding{
+        padding: 4rem 2rem;
+    }
+    
+    .section__margin {
+        margin: 4rem 2rem;
+    }
 }
