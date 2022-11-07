@@ -10,6 +10,7 @@ import LoginForm from './components/Login/loginform';
 import DailyCharts from './components/DailyCharts';
 import HourlyCharts from './components/HourlyCharts';
 import Loginform from './components/Login/loginform';
+import DailyDataService from './services/daily';
 
 export default function App(){
   return (
@@ -29,6 +30,8 @@ export default function App(){
     </>
   );
 }
+
+
 
 
 //const root = ReactDOM.createRoot(document.getElementById('root'));
