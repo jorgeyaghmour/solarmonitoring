@@ -11,7 +11,11 @@
  // router.route("/").get((req, res) => res.send("This is the root directory for the Solar Database"))
  
  // Uncomment when DAO is complete
- router.route("/").get(DailyController.apiGetDaily)
+ router.route("/daily")
+    .get(DailyController.apiGetDaily)
+    .post(DailyController.apiAddDaily)
+    .delete(DailyController.apiDeleteDaily)
+
  
  // export statements allow this file to be imported by other files in the project
  export default router

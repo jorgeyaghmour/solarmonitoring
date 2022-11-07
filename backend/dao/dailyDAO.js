@@ -13,6 +13,7 @@
  * Facility/Stattion name
  * 
  */
+import {ObjectId} from "mongodb"
 let daily // Represents the database
 
 class DailyDAO{
@@ -41,7 +42,11 @@ class DailyDAO{
         // definition of query statements
         let query
         if(filters){
-            // filtered query statements go here
+            if("Timestamp" in filters){
+                query = {"Timestamp": {$eq: filters["Timestamp"]}}
+            }else if("kW" in filters){
+                query = {"kW": {$eq: filters["kW"]}}
+            }
         } 
 
         // represents returned data
@@ -70,6 +75,36 @@ class DailyDAO{
             return{dailyList: [], totalNumDaily: 0 }
         }
         
+    }
+
+    // Creates a new document in the daily collection
+    static async addDaily(timestamp, kw){
+        try {
+            const dailyDoc = {
+                Timestamp: timestamp,
+                kW: kw,
+            }
+
+            return await daily.insertOne(dailyDoc)
+        } catch (e) {
+            console.error('Unable to post a document in daily: ' + e)
+            return {error: e}
+        }
+    }
+
+    // Deletes a document from the daily collection
+    static async deleteDaily(docId){
+        try {
+            // Again there should be some kind of user authentication here for security
+            const deleteResponse = await daily.deleteOne({
+                _id: ObjectId(docId)
+            })
+
+            return deleteResponse
+        } catch (e) {
+            console.error('Unable to delete document from daily: ' + e)
+            return{error: e}
+        }
     }
 
 }
