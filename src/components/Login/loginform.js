@@ -20,11 +20,11 @@ const Loginform = (props) => {
    * Updates information of the current user
    * @param {Event} event  
    */
-  // const handleUserInput = event => {
-  //   // `name` and `value` gotten from <input/> element props
-  //   const {name, value} = event.target
-  //   setUser({...user, [name]: value}) // 'name' needs to be in brackes. Otherwise VSCode thinks we're calling the FUNCTION called name
-  // }
+  const handleUserInput = event => {
+    // `name` and `value` gotten from <input/> element props
+    const {name, value} = event.target
+    setUser({...user, [name]: value}) // 'name' needs to be in brackes. Otherwise VSCode thinks we're calling the FUNCTION called name
+  }
   
   const login = () => {
     setRedirect(true)
