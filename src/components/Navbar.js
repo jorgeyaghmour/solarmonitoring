@@ -4,7 +4,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 //import * as RiIcons from 'react-icons/ri';
 //import * as TiIcons from 'react-icons/ti';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import {SidebarData } from './SidebarData';
 import './navbar.css';
 import {IconContext} from 'react-icons'
@@ -42,6 +42,7 @@ export function Navbar() {
         </ul>
       </nav>
       </IconContext.Provider>
+      <Outlet/>
     </>
   );
 }
