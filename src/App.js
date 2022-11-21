@@ -10,23 +10,33 @@ import LoginForm from './components/Login/loginform';
 import DailyCharts from './components/DailyCharts';
 import HourlyCharts from './components/HourlyCharts';
 import Loginform from './components/Login/loginform';
-import DailyDataService from './services/daily';
+import DailyList from './daily-list';
 
 export default function App(){
   return (
     <>
-      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<LoginForm/>}/>
+        <Route path='solar-monitor' element={<Navbar/>}>
+          <Route path='dashboard' element={<Dashboard/>}/>
+          <Route path='charts' element={<Charts/>}/>
+          <Route path='list' element={<DailyList/>}/>
+        </Route>
+      </Routes>
+      {/* <BrowserRouter>
       <div className="page">
+      <Navbar />
       <LoginForm />
       </div>
-        <Navbar />
+        
         <Routes>
           <Route path="/" element={<Dashboard />}>
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="charts" element={<Charts />} />
+          <Route path="/list" element={<DailyList/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   );
 }
