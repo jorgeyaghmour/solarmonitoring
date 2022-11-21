@@ -7,22 +7,22 @@ import Dashboard from "./pages/Dashboard";
 import Navbar from './components/Navbar';
 
 ReactDOM.render(
-<React.StrictMode>
+<BrowserRouter>
     <App/>
-</React.StrictMode>,
+</BrowserRouter>,
 document.getElementById('root')
 );
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <Navbar/>
-      <Routes>
-        <Route index element={<App />} />
-        <Route path="Loginform" element={<Loginform/>} />
-        <Route path="dashboard" element={<Dashboard />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <React.StrictMode>
+//     <BrowserRouter>
+//     <Navbar/>
+//       <Routes>
+//         <Route index element={<App />} />
+//         <Route path="Loginform" element={<Loginform/>} />
+//         <Route path="dashboard" element={<Dashboard />} />
+//       </Routes>
+//     </BrowserRouter>
+//   </React.StrictMode>
+// );
