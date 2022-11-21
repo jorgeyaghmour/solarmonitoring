@@ -1,14 +1,14 @@
 import React from 'react';
 import { Redirect } from 'react-router';
-import './App.css';
+import './App.css' ;
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter, BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
-import Charts from './pages/Charts';
 import LoginForm from './components/Login/loginform';
-import DailyCharts from './components/DailyCharts';
-import HourlyCharts from './components/HourlyCharts';
+import Alerts from './pages/Alerts';
+import Weather from './pages/Weather';
+import Account from './pages/Account';
 import Loginform from './components/Login/loginform';
 import DailyDataService from './services/daily';
 
@@ -23,7 +23,9 @@ export default function App(){
         <Routes>
           <Route path="/" element={<Dashboard />}>
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="charts" element={<Charts />} />
+          <Route path="alerts" element={<Alerts />} />
+          <Route path="weather" element={<Weather />} />
+          <Route path="account" element={<Account />} />
           </Route>
         </Routes>
       </BrowserRouter>
