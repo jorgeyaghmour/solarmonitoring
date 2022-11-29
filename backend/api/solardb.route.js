@@ -3,8 +3,9 @@
  * 
  */
  import express from "express"
- import DailyController from "../api/solardb.controller.js"
- 
+ import DailyController from "../api/dbcontroller.daily.js"
+ import HourlyController from "./dbcontroller.hourly.js"
+
  const router = express.Router()
  
  // "/" signifies the URL to the root directory
@@ -15,6 +16,12 @@
     .get(DailyController.apiGetDaily)
     .post(DailyController.apiAddDaily)
     .delete(DailyController.apiDeleteDaily)
+
+// These routes are not yet complete
+router.route("/hourly")
+   .get(HourlyController.apiGetHourly)
+   .post(HourlyController.apiAddHourly)
+   .delete(HourlyController.apiDeleteHourly)
 
  
  // export statements allow this file to be imported by other files in the project

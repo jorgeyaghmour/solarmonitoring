@@ -2,6 +2,7 @@ import app from "./server.js"   // imports root
 import mongodb from "mongodb"   // helps conect to mongodb
 import dotenv from "dotenv"     // helps configure environment variables automatically
 import DailyDAO from "./dao/dailyDAO.js"    // DAO file contains CRUD material
+import HourlyDAO from "./dao/hourlyDAO.js"
 
 // configures dotenv
 dotenv.config()
@@ -24,6 +25,7 @@ MongoClient.connect(
 })
 .then(async client => { // If the connection is successful, this is executed
     // Commented out while testing functionality
+    await HourlyDAO.injectDB(client)
     await DailyDAO.injectDB(client)
     app.listen(port, () => {
         console.log('listening on port: ' + port)

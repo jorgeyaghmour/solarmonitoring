@@ -67,7 +67,7 @@ class DailyController{
             console.log(docId)
             const dailyResponse = await DailyDAO.delete(docId)
             res.json({status: "success"})
-        } catch (error) {
+        } catch (e) {
             res.status(500).json({error: e.message})
         }
     }
